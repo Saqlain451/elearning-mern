@@ -1,0 +1,79 @@
+.shape-left,
+.shap-right {
+  width: 25rem;
+  height: 25rem;
+  border-radius: 50%;
+  background-color: #e8c1cf;
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: -12.5rem;
+  right: auto;
+}
+.instructor-hero {
+  padding: 9.5rem 0;
+  overflow: hidden;
+}
+
+.instructor-hero h1 {
+  z-index: 2 !important;
+}
+
+.shap-right {
+  background-color: #c1e8da;
+  top: 0;
+  bottom: auto;
+  right: -12.5rem;
+  left: auto;
+}
+
+@media (width<=767px) {
+  .instructor-hero {
+    padding: 4.3rem 0;
+    overflow: hidden;
+  }
+  .instructor-hero h1{
+    font-size: 3rem;
+  }
+  .shap-right,
+  .shape-left {
+    width: 12rem;
+    height: 12rem;
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: -6rem;
+    right: auto;
+  }
+  .shape-left {
+    top: 0;
+    bottom: auto;
+    right: -6rem;
+    left: auto;
+  }
+}
+@media (width<=442px) {
+  .instructor-hero h1{
+    font-size: 2.5rem;
+  }
+  .instructor-hero {
+    padding: 2.4rem 0;
+    overflow: hidden;
+  }
+  .shap-right,
+  .shape-left {
+    width: 8rem;
+    height: 8rem;
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: -4rem;
+    right: auto;
+  }
+  .shape-left {
+    top: 0;
+    bottom: auto;
+    right: -4rem;
+    left: auto;
+  }
+}

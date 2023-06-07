@@ -1,0 +1,31 @@
+
+.service-right{
+    position: relative;
+}
+.service-right img{
+    width: 90%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+.service-right .images{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.images img:first-child{
+    width: 20%;
+    height: auto;
+    position: absolute;
+    top: -3rem;
+    left: -3rem;
+}
+
+.images img:nth-child(2){
+    width: 20%;
+    height: auto;
+    position: absolute;
+    bottom: -3rem;
+    right: -2rem;
+}

@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+html{
+  font-size: 62.5%;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  user-select: none;
+}
+
+:root{
+  --color-green : 
+}
+
+.blur-green{
+  width: 35.2rem;
+  height: 35.2rem;
+  filter: blur(288px);
+  background-image: linear-gradient(138deg, #1b8e5a 100%, #fff);
+  border-radius: 50%;
+  position: absolute;
+  top: 10%;
+}
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text-secondary{
+  color: #9497a1;
+}
+.g-0-5{
+  gap: .5rem;
+}
+
+.g-2{
+  gap : 2rem
+}
+.g-1{
+  gap :1rem
+}
+
+.f-wrap{
+  flex-wrap: wrap;
+}
+.f-se{
+  justify-content: space-evenly;
+}
+.space-around{
+  justify-content: space-around;
+}
+.fs-1{
+  font-size: 1rem;
+}
+
+.fs-1-5{
+  font-size: 1.5rem;
+}
+.p-global{
+  padding: 10rem 6%;
+}
+
+.fs-2{
+ font-size: 2rem;
+}
+.fs-2-5{
+  font-size: 2.5rem;
+}
+
+.fs-3{
+  font-size: 3rem;
+}
+
+.fs-4{
+  font-size: 4rem;
+}
+
+.fs-4-5{
+  font-size: 4.5rem;
+}
+
+.fs-5{
+  font-size: 5rem;
+}
+
+.fw-4{
+  font-weight: 400;
+}
+.fw-5{
+  font-weight: 500;
+}
+
+.fw-6{
+  font-weight: 600;
+}
+.fw-7{
+  font-weight: 700;
+}
+.fw-8{
+  font-weight: 800;
+}
+
+.text-center{
+  text-align: center;
+}
+.p-2{
+  padding: 2rem;
+}
+.p-5{
+  padding: 5rem;
+}
+.p-6{
+  padding: 6%;
+}
+.p-3{
+  padding: 3rem;
+}
+.pb-3{
+  padding-bottom: 3rem;
+}
+.pb-4{
+  padding-bottom: 4rem;
+}
+.pb-5{
+  padding-bottom: 5rem;
+}
+.pb-10{
+  padding-bottom: 10rem;
+}
+.pb-7{
+  padding-bottom: 7rem;
+}
+.ptb-5{
+  padding: 5rem 0rem;
+}
+.ptb-7{
+  padding: 7rem 0rem;
+}
+.ptb-10{
+  padding: 10rem 0rem;
+}
+.plr-6{
+  padding: 0 6%;
+}
+
+.pt-4{
+  padding-top: 4rem;
+}
+
+.mt-1{
+ margin-top: 1rem;
+}
+.mt-2{
+  margin-top: 2rem;
+}
+.text-dark{
+  color : #3c3d3c
+}
+
+.mb-2{
+  margin-bottom: 2rem;
+}
+
+.mb-5{
+  margin-bottom: 5rem;
+}
+
+.d-grid-2{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.space-between{
+  justify-content: space-between;
+}
+.text-green{
+  color: #07a169;
+}
+.bg-light{
+  background-color: #f5fbf9;
+}
+.br-1{
+  border-radius: 1rem;
+}
+
+.bg-dark{
+  background-color: #191b1a;
+  color: white;
+}
+
+.br-0-5{
+  border-radius: 0.5rem;
+}
+.mt-5{
+  margin-top: 5rem;
+}
+
+.d-grid-3{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  align-items: center;
+  justify-content: center;
+  grid-gap: 2rem;
+}
+
+.grid-4{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  align-items: center;
+  justify-content: center;
+  grid-gap: 3rem;
+}
+
+.btn-success{
+  padding: 1.4rem 4rem;
+  border-radius: 25px;
+  display: block;
+  margin: auto;
+  background-color: #07a169;
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: 0.3s all linear;
+}
+
+.overflow-hidden{
+  overflow: hidden;
+}
+
+.btn-success:hover{
+  background-color: transparent;
+  border: 1px solid #07a169 ;
+  color: #07a169;
+}
+
+.btn-success-outline{
+  padding: 1.4rem 4rem;
+  border-radius: 25px;
+  border: 1px solid #07a169;
+  display: block;
+  margin: auto;
+  background-color: transparent;
+  color: #07a169;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.btn-success-outline:hover{
+  background-color: #07a169;
+  color: white;
+  cursor: pointer;
+}
+
+@media(width<770px){
+  .d-grid-3{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .grid-md-2{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media(width<1000px){
+  .grid-lg-3{
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 2rem;
+  }.grid-lg-2{
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 2rem;
+  }
+}
+
+@media(width<500px){
+  .d-grid-2{
+    grid-template-columns: 100%;
+    grid-gap: 2rem;
+  }
+  .service-right img{
+    width: 100%;
+    height: auto;
+  }
+  .fs-4-5{
+    font-size: 3.6rem;
+  }
+  .grid-sm-1{
+    display: grid;
+    grid-template-columns: 100%;
+    display: block;
+    margin: auto;
+    padding: 6%;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .ins-card{
+    margin-top: 2rem;
+  }
+
+}
+
+

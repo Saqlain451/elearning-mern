@@ -1,0 +1,41 @@
+.ins-card{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    padding: 2rem 2rem 3rem 2rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s linear;
+    box-shadow:  0 8px -2px rgba(16, 24, 40, .2);
+}
+
+.ins-card:hover{
+    border-top-left-radius: 1rem;
+    border-top-right-radius:1rem ;
+    border-top: 4px solid #07a169;
+    box-shadow: 0rem 1.5rem 3rem rgba(0,0,0,0.2);
+}
+
+.ins-card img{
+    width: 70%;
+    height: auto;
+    margin: auto;
+    display: block;
+    padding: 4rem 0;
+    border-radius: 50%;
+}
+
+.ins-card span{
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s all linear;
+    font-size: 1.4rem;
+}
+.ins-card span:hover{
+    background-color: #07a169;
+    color: #f5fbf9;
+    cursor: pointer;
+    border-radius: 50%;
+}

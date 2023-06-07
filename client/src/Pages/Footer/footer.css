@@ -1,0 +1,11 @@
+.footer-pages ul li a{
+    color: white;
+}
+.footer-pages ul li{
+    margin-top: 0.5rem;
+}
+
+.footer-pages ul li a:hover{
+    color: #07a169;
+}
+

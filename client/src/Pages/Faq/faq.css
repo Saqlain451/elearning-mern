@@ -1,0 +1,12 @@
+.faq {
+  display: grid;
+  margin: auto;
+  width: 60%;
+}
+
+@media (width<500px) {
+  .faq {
+    padding: 6%;
+    width: 100%;
+  }
+}

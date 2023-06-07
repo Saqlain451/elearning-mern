@@ -1,0 +1,19 @@
+.social a{
+    color: white;
+    font-size: 2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: #3c3d3c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    transition: all 0.3s linear;
+}
+
+.social a:hover{
+    margin-top: 0rem;
+    background-color: #07a169;
+    color: white;
+}

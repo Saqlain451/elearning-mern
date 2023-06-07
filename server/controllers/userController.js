@@ -1,0 +1,49 @@
+import users from "../model/users.js";
+import bcrypt from 'bcryptjs';
+
+
+const createUser = async (req, res) => {
+    const { name, profession, mail, pass, cpass } = req.body;
+    if (!name || !profession || !mail || !pass || !cpass) {
+        return res.status(501).json({ err: "Feild can not be empty" })
+    }
+    const hashedPassword = await bcrypt.hash(pass, 12);
+    const hashedcPassword = await bcrypt.hash(cpass, 12);
+    const newData = new users({ ...req.body, pass: hashedPassword, cpass: hashedcPassword })
+    try {
+        const existUser = await users.findOne({ mail })
+        if (existUser) {
+            return res.status(501).json({ err: "User is already registered" })
+        } else if (pass !== cpass) {
+            return res.status(501).json({ err: "Password and Confirm password must be same" })
+        }
+        await newData.save();
+        res.status(201).json({ msg: "Registed" })
+    } catch (error) {
+        res.status(401).json({ err: "Not Registered" })
+    }
+}
+
+//  *for log in creating function  ----->
+
+const checkUser = async (req, res) => {
+    const { mail, pass } = req.body;
+    if (!mail || !pass) {
+        return res.status(501).json({ err: "Field can not be empty" })
+    }
+    try {
+        const chekMail = await users.findOne({ mail })
+        const token = await chekMail.generateToken();
+        // console.log(token);
+        res.cookie("jwt", token, {
+            expire: new Date(Date.now() + 240000000),
+            httpOnly: true,
+        });
+        const isPassMatch = await bcrypt.compare(pass, chekMail.pass);
+        chekMail && isPassMatch ? res.status(201).json({ msg: "Log in Successfull" }) : res.status(501).json({ err: "Invalid Credential" })
+    } catch (error) {
+        res.status(501).json({ err: "User is not registered" })
+    }
+}
+
+export { createUser, checkUser };

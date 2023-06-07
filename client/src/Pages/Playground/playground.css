@@ -1,0 +1,57 @@
+.playground {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #eaeaea;
+  padding: 5rem 4.5rem;
+  gap: 1rem;
+}
+
+.playground .playground-left .btns {
+  display: flex;
+  align-items: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.playground-left{
+  background: #eaeaea;
+  box-shadow:5px 5px 10px #bebebe, -5px -5px 10px #fff;
+  padding: 2rem;
+  border-radius: .7rem;
+}
+
+.playground-left button {
+  width: 12rem;
+  height: 3.5rem;
+  border-radius: 1rem 0rem 1rem 0rem;
+  border: 1px solid #07a169;
+  background-color: transparent;
+  color: #07a169;
+  font-weight: 400;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.playground-left .btn-active {
+  background-color: #07a169;
+  color: white;
+  cursor: pointer;
+}
+.playground-right {
+  height: 100%;
+  box-shadow:5px 5px 10px #bebebe, -5px -5px 10px #fff;
+  padding: 2rem;
+  border-radius: .7rem;
+}
+
+
+.playground-right iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}

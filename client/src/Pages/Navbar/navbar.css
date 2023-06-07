@@ -1,0 +1,173 @@
+header {
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  height: 9rem;
+  padding: 0 6%;
+}
+
+header .navbar-logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbar-logo a{
+  color: black;
+}
+
+.navbar-logo span {
+  color: #0a9e68;
+}
+
+header .navbar-list {
+  display: flex;
+  font-size: 1.6rem;
+  gap: 4rem;
+}
+
+.navbar-list a {
+  color: black;
+  font-weight: 500;
+}
+
+li .active {
+  color: #0a9e68;
+}
+
+li:hover a {
+  color: #0a9e68;
+}
+
+header .log-in {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.log-in .bar {
+  display: none;
+}
+
+.log-in button {
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  text-transform: capitalize;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid #0a9e68;
+  font-weight: 500;
+  transition: 0.3s all linear;
+}
+.log-in button a{
+  color: #0a9e68;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.log-in button:hover{
+  border: none;
+  background-color: #0a9e68;
+  transform: rotate(360deg);
+}
+.log-in button:hover a{
+  color: white;
+  font-weight: 600;
+}
+
+
+ .navbar-mobile {
+  display: none;
+}
+
+/** ------------------------ Design it for tablet view ------------------------------> */
+
+@media (441px<=width<=900px) {
+  .navbar {
+    width: 100%;
+    height: 100vh;
+    background-color:white !important;
+    position: fixed;
+    top: 8rem;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+    visibility: hidden;
+    transition: all 0.4s linear;
+    z-index: 2;
+  }
+  .navbar-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .log-in .bar {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0a9e68;
+    border-radius: 50%;
+    border: none;
+    font-size: 2rem;
+    color: white;
+  }
+  .show .navbar {
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+/* *---------------------------------------- Now desingning it for mobile view ----------------------> */
+
+@media (width<=440px) {
+  .navbar-mobile {
+    display: block;
+    background-color: white;
+    height: auto;
+    display: grid;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 999;
+  }
+
+  .navbar-list-mobile a {
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .navbar-list-mobile a span{
+    font-size: 2rem;
+  }
+
+  .navbar-list-mobile .active {
+    color: #0a9e68;
+  }
+
+  .navbar-mobile .navbar-list-mobile {
+    display: flex;
+    justify-content: space-around !important;
+    align-items: center;
+    padding: 2rem 0rem;
+  }
+
+  .navbar {
+    display: none;
+  }
+}
+
+/* *-------------------------------------------- End of navbar --------------------------------------------------------*/

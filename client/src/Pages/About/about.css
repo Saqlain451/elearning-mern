@@ -1,0 +1,45 @@
+.about-hero{
+    position: relative;
+    overflow: hidden;
+}
+.about-hero .success-img{
+    width: 25%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 6%;
+    top: auto;
+    right: auto;
+    animation: side  3s linear infinite;
+}
+.about-hero .video-img{
+    width: 15%;
+    height: auto;
+    position: absolute;
+    top: 6%;
+    right: 6%;
+    left: auto;
+    bottom: auto;
+    animation: upDown 4s linear infinite;
+}
+
+.about-hero .star-left{
+    position: absolute;
+    top: 6%;
+    left: 6%;
+    bottom: auto;
+    right: auto;
+}
+
+.about-hero .star-right{
+    position: absolute;
+    bottom: 6%;
+    right: 6%;
+    left: auto;
+    top: auto;
+}
+
+.about-instructor .instructor{
+    background-color: white;
+}
+

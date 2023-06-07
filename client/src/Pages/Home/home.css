@@ -1,0 +1,26 @@
+
+.service{
+    background-color: #f5fbf9;
+    padding:14% 6%;
+}
+.white-div{
+    width: 105%;
+    height: 10rem;
+    background-color: white;
+    position: absolute;
+    top: -5rem;
+    left: -0.5rem;
+    transform: rotate(-4deg);
+}
+.p-relative{
+    position: relative;
+}
+.white-div-2{
+    width: 105%;
+    height: 10rem;
+    background-color: white;
+    position: absolute;
+    bottom: -5rem;
+    left: -0.5rem;
+    transform: rotate(-4deg);
+}

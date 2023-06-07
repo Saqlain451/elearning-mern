@@ -1,0 +1,7 @@
+.w-60{
+    width: 60%;
+}
+.plus{
+    transition: 0.3s linear;
+    cursor: pointer;
+}
