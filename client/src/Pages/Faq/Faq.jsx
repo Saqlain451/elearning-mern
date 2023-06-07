@@ -4,6 +4,7 @@ import FaqComp from "../../Components/FaqComp/FaqComp";
 import Title from "../../Components/Title/Title";
 import { NavLink } from "react-router-dom";
 import "./faq.css";
+import { useGloblaHook } from "../../Hooks/Context";
 
 const Faq = () => {
   const faqTitle = {

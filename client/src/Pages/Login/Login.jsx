@@ -6,8 +6,9 @@ import { AiFillLock } from "react-icons/ai";
 import { useGloblaHook } from "../../Hooks/Context";
 const Login = () => {
   const navigate = useNavigate();
-  const { loginData, loginChangeHandler, loginHanlder, isLoggedIn } =
+  const { loginData, loginChangeHandler, loginHanlder, isLoggedIn,titleChange } =
     useGloblaHook();
+    titleChange("Log in")
   if (isLoggedIn) {
     navigate("/");
   }

@@ -3,7 +3,10 @@ import Hero from '../../Components/Hero/Hero'
 import "./course.css"
 import Instructor4 from '../../Components/InstructorCard/Instructor4'
 import Faq from '../Faq/Faq'
+import { useGloblaHook } from '../../Hooks/Context'
 const Courses = () => {
+  const {titleChange} = useGloblaHook();
+  titleChange("Courses");
   const courseHero = {
     subHeading: "About",
     heading: "The Future of Classical Education",

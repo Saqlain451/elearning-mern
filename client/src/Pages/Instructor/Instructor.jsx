@@ -6,7 +6,8 @@ import { NavLink } from "react-router-dom";
 import Faq from "../Faq/Faq";
 import { useGloblaHook } from "../../Hooks/Context";
 const Instructor = () => {
-  const { instructor} = useGloblaHook();
+  const { instructor,titleChange} = useGloblaHook();
+  titleChange("Instructors")
   const instructData = {
     subHeading: "Team Members",
     heading: "Our Expert",

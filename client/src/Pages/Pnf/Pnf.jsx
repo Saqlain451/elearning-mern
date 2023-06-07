@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useGloblaHook } from "../../Hooks/Context";
 const Pnf = () => {
   const navigate = useNavigate();
+  const {titleChange} = useGloblaHook();
+  titleChange("Page not found")
   
   useEffect(()=>{
     setTimeout(()=>{

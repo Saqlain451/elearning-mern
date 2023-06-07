@@ -8,7 +8,10 @@ import Title from "../../Components/Title/Title";
 import Features from "../../Components/Features/Features";
 import Faq from "../Faq/Faq";
 import Instructor4 from "../../Components/InstructorCard/Instructor4";
+import { useGloblaHook } from "../../Hooks/Context";
 const Home = () => {
+  const {titleChange} = useGloblaHook();
+  titleChange("Home")
   const heroData = {
     subHeading: "Start your Journey",
     heading: "Your Potential Techniques for Skill Development",

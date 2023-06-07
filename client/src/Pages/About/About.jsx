@@ -4,7 +4,10 @@ import "./about.css";
 import Features from "../../Components/Features/Features";
 import { successData } from "../../Hooks/Data";
 import Instructor4 from "../../Components/InstructorCard/Instructor4";
+import { useGloblaHook } from "../../Hooks/Context";
 const About = () => {
+  const {titleChange} = useGloblaHook();
+  titleChange("About")
   return (
     <>
       <div className="about-hero bg-light p-global">

@@ -8,7 +8,8 @@ import "./register.css";
 import { useGloblaHook } from "../../Hooks/Context";
 const Register = () => {
   const navigate = useNavigate();
-  const {registerData,regChangeHanler,regSubHandler,isRegisterd} = useGloblaHook();
+  const {registerData,regChangeHanler,regSubHandler,isRegisterd,titleChange} = useGloblaHook();
+  titleChange("Sign Up")
   if(isRegisterd){
     navigate("/login")
   }
