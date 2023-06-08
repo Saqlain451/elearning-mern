@@ -4,13 +4,16 @@ import "./login.css";
 import { BsFillPersonFill } from "react-icons/bs";
 import { AiFillLock } from "react-icons/ai";
 import { useGloblaHook } from "../../Hooks/Context";
+import  { Toaster } from 'react-hot-toast';
 const Login = () => {
   const navigate = useNavigate();
   const { loginData, loginChangeHandler, loginHanlder, isLoggedIn,titleChange } =
     useGloblaHook();
     titleChange("Log in")
   if (isLoggedIn) {
-    navigate("/");
+    setTimeout(() => {
+      navigate("/");
+    },5000);
   }
   return (
     <>
@@ -53,6 +56,7 @@ const Login = () => {
           <img src="./assets/sign.png" alt="sign" />
         </div>
       </div>
+      <Toaster/>
     </>
   );
 };

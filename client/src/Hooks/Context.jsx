@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import toast, { Toaster } from 'react-hot-toast';
 const appContext = React.createContext();
 const AppProvider = ({ children }) => {
   //*  Title change------------------------>
@@ -61,11 +62,15 @@ const AppProvider = ({ children }) => {
       const res = await data.json();
       console.log(res);
       if (res.msg) {
-        alert(res.msg);
+        toast.success(res.msg, {
+          position: 'bottom-center',
+        });
         setFunc(true);
       } else {
-        alert(res.err);
-        setFunc(false)
+        toast.error(res.err,{
+          position: 'bottom-center',
+        })
+        // setFunc(false)
       }
     } catch (error) {
       console.error(error);

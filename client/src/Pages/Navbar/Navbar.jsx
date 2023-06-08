@@ -5,9 +5,10 @@ import { GoThreeBars } from 'react-icons/go';
 import { useGloblaHook } from '../../Hooks/Context';
 import {AiOutlineHome} from 'react-icons/ai'
 import {BsBookHalf,BsCodeSlash,BsFillPersonFill,BsFillGridFill} from 'react-icons/bs'
-
+import {RiLogoutCircleFill} from 'react-icons/ri'
 const Navbar = () => {
-  const {navbarToggle, show} = useGloblaHook()
+  const {navbarToggle, show,isLoggedIn} = useGloblaHook()
+  console.log(isLoggedIn);
   return (
     <>
       <header className= {show? "show" : ""}>
@@ -24,8 +25,8 @@ const Navbar = () => {
           </ul>
         </nav>
         <div className="log-in">
-          <button className="btn-login"> <NavLink to={"/login"}><BsFillPersonFill/></NavLink></button>
-          <span className='bar' onClick={navbarToggle}> <GoThreeBars /> </span>
+          <button className="btn-login"> <NavLink to={"/login"}>{isLoggedIn? <RiLogoutCircleFill/>:<BsFillPersonFill/>}</NavLink></button>
+          <span className='bar' onClick={navbarToggle}>  <GoThreeBars />  </span>
         </div>
       </header>
 
