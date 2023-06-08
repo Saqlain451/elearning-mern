@@ -59,7 +59,7 @@ const Courses = () => {
             const newEle = {title, img, price, type,author}
               return(
                 <CourseCard {...newEle} key={ele
-                ._id} />
+                ._id} path={`/courses/${ele._id}`} />
               )
           })}
           

@@ -12,7 +12,7 @@ const createCourse = async (req, res) => {
      
     try {
         const newData = new courses ({...req.body}) 
-        const existData = await courses.findOne({title}&&{author});
+        const existData = await courses.findOne({title}||{author});
         if(existData){
           return  res.status(501).json({err : "Course is already Uploaded"})
         }else {

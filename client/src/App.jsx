@@ -14,6 +14,7 @@ import ContactForm from "./Pages/Contact/Contact";
 import Footer from "./Pages/Footer/Footer";
 import Faq from "./Pages/Faq/Faq";
 import Trainer from "./Pages/Trainer/Trainer";
+import SingleCourse from "./Pages/SingleCourse/SingleCourse";
 const App = () => {
 
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/courses" element={<Courses />} />
+          <Route path="/courses/:id" element={<SingleCourse/>} />
           <Route path="/playground" element={<Playground />} />
           <Route path="/instructor" element={<Instructor />} />
           <Route path="/instructor/:id" element={<Trainer/>} />

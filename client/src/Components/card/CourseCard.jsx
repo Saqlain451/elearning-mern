@@ -1,7 +1,9 @@
 import React from "react";
 import "./coursecard.css";
-import { MdOutlinePersonOutline, MdOutlineVideocam } from "react-icons/md";
-const CourseCard = ({ img, price, title, type, author }) => {
+import { MdOutlinePersonOutline} from "react-icons/md";
+import { useNavigate } from "react-router-dom";
+const CourseCard = ({ img, price, title, type, author,path }) => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="course-card">
@@ -20,7 +22,7 @@ const CourseCard = ({ img, price, title, type, author }) => {
             </p>
             <p className="fs-1-5 fw-6 text-dark">{type}</p>
           </div>
-          <button>konw more</button>
+          <button onClick={()=>{navigate(path)}}>konw more</button>
         </div>
       </div>
     </>
