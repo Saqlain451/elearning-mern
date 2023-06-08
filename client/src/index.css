@@ -261,9 +261,6 @@ html{
 }
 
 @media(width<770px){
-  .d-grid-3{
-    grid-template-columns: repeat(2,1fr);
-  }
   .grid-md-2{
     grid-template-columns: repeat(2,1fr);
   }

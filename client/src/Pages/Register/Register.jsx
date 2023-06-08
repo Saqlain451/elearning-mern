@@ -37,13 +37,15 @@ const Register = () => {
               <span className="text-green fs-2">
                 <MdEmail/>
               </span>
-              <input type="email" placeholder="Email id:" name="mail" value={registerData.mail} onChange={regChangeHanler}/>
+              <input type="email" placeholder="Email id:" name="mail" value={registerData.mail} onChange={regChangeHanler} required/>
             </div>
             <div className="input-feild">
               <span className="text-green fs-2">
                 <AiFillLock />
               </span>
-              <input type="password" placeholder="Password" name="pass" value={registerData.pass} onChange={regChangeHanler}/>
+              <input type="password" placeholder="Password" name="pass" value={registerData.pass} onChange={regChangeHanler} required
+                minLength={8}
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$"/>
             </div>
             <div className="input-feild">
               <span className="text-green fs-2">
