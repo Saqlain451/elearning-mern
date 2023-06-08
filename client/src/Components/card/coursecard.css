@@ -8,13 +8,14 @@
     width: 100%;
     height: auto;
     border-radius: 0 0 0.5rem 0rem;
+    aspect-ratio: 300/188;
 }
 .course-card .course-card-content{
     position: relative;
     width: 100%;
     height: auto;
     background-color: aliceblue;
-    border-radius: 0.5rem;
+    border-radius: 0rem 0.5rem 0.5rem 0.5rem;
     margin-top: 0.5rem;
     padding: 1rem;
 }
@@ -23,7 +24,7 @@
     width: 40%;
     height: 4rem;
     position: absolute;
-    top: -44.5%;
+    top: -24.5%;
     left: 0%;
     border-radius: 0rem 1rem 0.5rem 0rem;
     display: flex;

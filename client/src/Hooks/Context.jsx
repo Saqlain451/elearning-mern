@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import toast, { Toaster } from 'react-hot-toast';
 const appContext = React.createContext();
 const AppProvider = ({ children }) => {
+  const url = import.meta.env.VITE_API_URL;
   //*  Title change------------------------>
   const titleChange = (str) => {
     return (document.title = str);
@@ -12,11 +13,14 @@ const AppProvider = ({ children }) => {
     show ? setShow(false) : setShow(true);
   };
 
+  // * Start of courses part ----------------------->
+  const [allCourses, setAllCourses] = useState([])
+
   // * start instructor part ---------------->
 
   const [instructor, setallInstructors] = useState([]);
   const [trainer, setTrainer] = useState({});
-  const url = import.meta.env.VITE_API_URL;
+ 
   const getInsApiData = async (url, setData) => {
     try {
       const data = await fetch(url);
@@ -32,6 +36,9 @@ const AppProvider = ({ children }) => {
     getInsApiData(`${url}/allInstructor`, setallInstructors);
   }, []);
   // * End of instructor --------------------------------->
+
+  
+
 
   // * Start register part ----------------------------->
 
@@ -176,7 +183,9 @@ const AppProvider = ({ children }) => {
         loginChangeHandler,
         loginHanlder,
         isRegisterd,
-        isLoggedIn
+        isLoggedIn,
+        allCourses,
+        setAllCourses
       }}
     >
       {children}

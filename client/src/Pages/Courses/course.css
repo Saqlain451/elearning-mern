@@ -2,3 +2,26 @@
 .course .hero-right .tutor{
     display: none;
 }
+
+.course .course-btns{
+    display: flex;
+    align-items: center;
+    margin: 3rem 0;
+    gap: 1rem;
+}
+
+.course .course-btns button{
+    width: 12rem;
+    height: 3.5rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #07a169;
+    border-radius: 0.5rem;
+}
+
+.course .course-btns .active-btn{
+    background-color: #07a169;
+    color: white;
+}
+
