@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./home.css";
 import Hero from "../../Components/Hero/Hero";
 import { partnerCompany, testimonialData } from "../../Hooks/Data";
@@ -9,8 +9,10 @@ import Features from "../../Components/Features/Features";
 import Faq from "../Faq/Faq";
 import Instructor4 from "../../Components/InstructorCard/Instructor4";
 import { useGloblaHook } from "../../Hooks/Context";
+import CourseCard from "../../Components/card/CourseCard";
+
 const Home = () => {
-  const {titleChange} = useGloblaHook();
+  const {titleChange,getInsApiData, allCourses,setAllCourses,url} = useGloblaHook();
   titleChange("Home")
   const heroData = {
     subHeading: "Start your Journey",
@@ -36,6 +38,10 @@ const Home = () => {
     des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
   };
 
+  useEffect(()=>{
+    getInsApiData(`${url}/allcourses`,setAllCourses)
+  },[])
+
   return (
     <>
       <Hero {...heroData} />
@@ -50,8 +56,20 @@ const Home = () => {
           })}
         </div>
       </div>
-      <div className="pb-10">
+      <div className="p-global">
         <Title {...courseTitle} />
+        <div className="grid-4 grid-sm-1 grid-lg-3 grid-md-2 ptb-5">
+        {allCourses.map((ele,id)=>{
+            const{title, img, price, type,author} = ele;
+            const newEle = {title, img, price, type,author}
+            if(id<8){
+              return(
+                <CourseCard {...newEle} key={ele
+                ._id} path={`/courses/${ele._id}`} />
+              )
+            }  
+          })}
+        </div>
       </div>
       <Features />
       <div className="ptb-10">

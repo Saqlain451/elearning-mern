@@ -260,15 +260,16 @@ html{
   cursor: pointer;
 }
 
-@media(width<770px){
+@media(width<=770px){
   .grid-md-2{
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr) !important;
+    grid-gap: 2rem;
   }
 }
 
 @media(width<1000px){
   .grid-lg-3{
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3,1fr) ;
     grid-gap: 2rem;
   }.grid-lg-2{
     grid-template-columns: repeat(2,1fr);

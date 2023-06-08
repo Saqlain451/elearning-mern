@@ -19,7 +19,6 @@ const Instructor4 = () => {
         <Title {...instructData} />
         <div className="grid-4 p-6 grid-sm-1 grid-lg-2">
           {instructor.map((ele, id) => {
-            console.log(ele._id);
             if (id < 4) {
               return (
                 <NavLink to={`/instructor/${ele._id}`} key={id}>
