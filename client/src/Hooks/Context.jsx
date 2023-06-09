@@ -15,6 +15,27 @@ const AppProvider = ({ children }) => {
 
   // * Start of courses part ----------------------->
   const [allCourses, setAllCourses] = useState([])
+  const [isError, setisError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true)
+  const getPostApiData =async (api,inpData,setData)=>{
+    setisError(false);
+    setIsLoading(true);
+    try {
+      const data = await fetch(api,{
+        method : "POST",
+        headers: {"Content-Type": "application/json"},
+        body : JSON.stringify({...inpData})
+      })
+      const res = await data.json();
+      res?setIsLoading(false) : setIsLoading(true);
+      (res.success)?
+      setData(res.success) : setisError(true);
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  
 
   // * start instructor part ---------------->
 
@@ -22,10 +43,12 @@ const AppProvider = ({ children }) => {
   const [trainer, setTrainer] = useState({});
  
   const getInsApiData = async (url, setData) => {
+    setIsLoading(true)
     try {
       const data = await fetch(url);
       const res = await data.json();
       // console.log(res);
+      res? setIsLoading ( false) : setIsLoading(true)
       setData(res.success);
     } catch (error) {
       console.log(error);
@@ -185,7 +208,10 @@ const AppProvider = ({ children }) => {
         isRegisterd,
         isLoggedIn,
         allCourses,
-        setAllCourses
+        setAllCourses,
+        getPostApiData,
+        isError,
+        isLoading,
       }}
     >
       {children}

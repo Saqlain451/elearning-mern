@@ -1,12 +1,16 @@
 import express from 'express';
-import getAllCourse,{createCourse,getCoursesByType} from '../controllers/CoursesControleer.js';
+import getAllCourse, { createCourse, getCoursesByType, getById, getCourseByName } from '../controllers/CoursesControleer.js';
 const courseRouter = new express.Router();
 
 courseRouter.post("/addcourse", createCourse);
 // Getting all courses
 courseRouter.get("/allcourses", getAllCourse)
-// get course using type
-courseRouter.get("/courses/:type",getCoursesByType);
 
+// * get courses by using type
+
+courseRouter.post("/courses/type", getCoursesByType);
+// * get course by using title
+
+courseRouter.post("/courses/title",getCourseByName);
 
 export default courseRouter;

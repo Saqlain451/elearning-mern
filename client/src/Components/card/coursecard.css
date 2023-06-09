@@ -30,8 +30,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-top: 0.7rem solid white;
-    border-right: 0.7rem solid white;
+    border-top: 0.7rem solid #eaeaea;
+    border-right: 0.7rem solid #eaeaea;
 }
 
 .course-card-content button{
