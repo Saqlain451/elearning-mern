@@ -81,7 +81,7 @@ const getById = async (req, res) => {
     const id = req.params.id;
     console.log(id);
     try {
-        const data = await instructor.findOne({ _id: id })
+        const data = await courses.findOne({ _id: id })
         res.status(201).json({ "success": data })
     } catch (error) {
         res.json({ err: "Data not found" })

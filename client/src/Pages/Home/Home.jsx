@@ -10,6 +10,7 @@ import Faq from "../Faq/Faq";
 import Instructor4 from "../../Components/InstructorCard/Instructor4";
 import { useGloblaHook } from "../../Hooks/Context";
 import CourseCard from "../../Components/card/CourseCard";
+import { NavLink } from "react-router-dom";
 
 const Home = () => {
   const {titleChange,getInsApiData, allCourses,setAllCourses,url} = useGloblaHook();
@@ -58,7 +59,7 @@ const Home = () => {
       </div>
       <div className="p-global">
         <Title {...courseTitle} />
-        <div className="grid-4 grid-sm-1 grid-lg-3 grid-md-2 ptb-5">
+        <div className="grid-4 grid-sm-1 grid-lg-3 grid-md-2 home-course">
         {allCourses.map((ele,id)=>{
             const{title, img, price, type,author} = ele;
             const newEle = {title, img, price, type,author}
@@ -70,6 +71,10 @@ const Home = () => {
             }  
           })}
         </div>
+        <div className="mt-5"></div>
+        <NavLink to={"/courses"}>
+          <button className="btn-success-outline"> See All Courses</button>
+        </NavLink>
       </div>
       <Features />
       <div className="ptb-10">

@@ -21,6 +21,7 @@ const Instructor = () => {
         <div className="shape-left"></div>
         <div className="shap-right"></div>
       </div>
+
       <div className="ptb-10">
         <Title {...instructData} />
         <div className="grid-4 p-6 grid-sm-1 grid-lg-2">

@@ -27,6 +27,7 @@
   left: auto;
 }
 
+
 @media (width<=767px) {
   .instructor-hero {
     padding: 4.3rem 0;

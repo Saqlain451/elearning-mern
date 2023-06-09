@@ -24,3 +24,12 @@
     left: -0.5rem;
     transform: rotate(-4deg);
 }
+
+.home-course{
+    padding-top: 7rem;
+}
+
+.home-course .course-card-content .price{
+    border-top: 0.7rem solid white;
+    border-right: 0.7rem solid white;
+}

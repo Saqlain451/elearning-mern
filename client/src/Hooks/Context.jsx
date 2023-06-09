@@ -17,6 +17,7 @@ const AppProvider = ({ children }) => {
   const [allCourses, setAllCourses] = useState([])
   const [isError, setisError] = useState(false);
   const [isLoading, setIsLoading] = useState(true)
+  const [course, setCourseData] = useState({})
   const getPostApiData =async (api,inpData,setData)=>{
     setisError(false);
     setIsLoading(true);
@@ -212,6 +213,8 @@ const AppProvider = ({ children }) => {
         getPostApiData,
         isError,
         isLoading,
+        course,
+        setCourseData,
       }}
     >
       {children}
