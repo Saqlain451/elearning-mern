@@ -27,6 +27,10 @@ const courseSchema = new mongoose.Schema({
     language : {
         type : String,
         default : "Hindi"
+    },
+    intro : {
+        type : String,
+        required : true,
     }
 })
 

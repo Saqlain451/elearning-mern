@@ -2,7 +2,7 @@ import React from 'react'
 import "./course.css"
 import {BsCurrencyRupee,BsLightbulb,BsFillPersonFill,BsStar,BsTranslate} from 'react-icons/bs'
 
-const Course = ({title,price,description,type, author,language,img}) => {
+const Course = ({title,price,description,type, author,language,img,intro}) => {
   return (
     
     <>
@@ -21,9 +21,8 @@ const Course = ({title,price,description,type, author,language,img}) => {
           <iframe className="mt-2"
             width="100%"
             height="397"
-            src="https://www.youtube.com/embed/sQnPzTohwfM"
-            title="Figma to Webflow: Introduction (Part 1 of 7) — Webflow University"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            frameBorder={"0"}
+            src={intro}
             allowFullScreen
           ></iframe>
         </div>
