@@ -48,3 +48,9 @@
     cursor: pointer;
     color: white;
 }
+
+@media(width<500px){
+    .course-description{
+        grid-template-columns: auto;
+    }
+}

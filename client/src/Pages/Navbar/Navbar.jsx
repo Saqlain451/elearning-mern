@@ -8,7 +8,6 @@ import {BsBookHalf,BsCodeSlash,BsFillPersonFill,BsFillGridFill} from 'react-icon
 import {RiLogoutCircleFill} from 'react-icons/ri'
 const Navbar = () => {
   const {navbarToggle, show,isLoggedIn} = useGloblaHook()
-  console.log(isLoggedIn);
   return (
     <>
       <header className= {show? "show" : ""}>
