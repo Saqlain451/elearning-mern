@@ -1,8 +1,9 @@
 import React from 'react'
 import "./course.css"
 import {BsCurrencyRupee,BsLightbulb,BsFillPersonFill,BsStar,BsTranslate} from 'react-icons/bs'
-
-const Course = ({title,price,description,type, author,language,img,intro}) => {
+import { useNavigate } from 'react-router-dom'
+const Course = ({title,price,description,type, author,language,img,intro,path}) => {
+  const navigate = useNavigate();
   return (
     
     <>
@@ -37,7 +38,7 @@ const Course = ({title,price,description,type, author,language,img,intro}) => {
             <p><i><BsFillPersonFill/></i> <span>Author :</span>  {author} </p>
             <p><i><BsStar/></i> <span>Access :</span>    Lifetime</p>
             <p><i><BsTranslate/></i>  <span>Language :</span>   {language}</p>
-            <button>Get Course</button>
+            <button onClick={()=>{navigate(path)}} >Get Course</button>
             </div>
             
         </div>

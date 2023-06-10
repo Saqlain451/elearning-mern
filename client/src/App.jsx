@@ -15,6 +15,7 @@ import Footer from "./Pages/Footer/Footer";
 import Faq from "./Pages/Faq/Faq";
 import Trainer from "./Pages/Trainer/Trainer";
 import SingleCourse from "./Pages/SingleCourse/SingleCourse";
+import CourseVideos from "./Pages/CourseVideos/CourseVideos";
 const App = () => {
 
   return (
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/courses/:id" element={<SingleCourse/>} />
+          <Route path="/courses/videos/:id" element={<CourseVideos/>} />
           <Route path="/playground" element={<Playground />} />
           <Route path="/instructor" element={<Instructor />} />
           <Route path="/instructor/:id" element={<Trainer/>} />

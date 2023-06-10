@@ -13,7 +13,7 @@ const SingleCourse = () => {
   },[])
   return (
     <>
-      <Course {...course}/>
+      <Course {...course} path={`/courses/videos/${course._id}`}/>
     </>
   );
 };
