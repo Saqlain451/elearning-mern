@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./login.css";
 import { BsFillPersonFill } from "react-icons/bs";
@@ -15,6 +15,11 @@ const Login = () => {
       navigate("/");
     },3000);
   }
+  useEffect(()=>{
+    if (localStorage.getItem("user")) {
+      navigate("/");
+  }
+  },[navigate])
   return (
     <>
       <div className="d-flex p-global" style={{ background: "#eaeaea" }}>
@@ -46,7 +51,6 @@ const Login = () => {
                 onChange={loginChangeHandler}
                 required
                 minLength={8}
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$"
               />
             </div>
             <div className="btns">

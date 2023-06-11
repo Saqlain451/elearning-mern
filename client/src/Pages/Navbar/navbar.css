@@ -62,24 +62,36 @@ header .log-in {
   border: 1px solid #0a9e68;
   font-weight: 500;
   transition: 0.3s all linear;
-}
-.log-in button a{
   color: #0a9e68;
-  font-size: 2.5rem;
+  font-size: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .log-in button:hover{
   border: none;
   background-color: #0a9e68;
   transform: rotate(360deg);
-}
-.log-in button:hover a{
   color: white;
   font-weight: 600;
 }
 
+.log-in p {
+  width: 10rem;
+  height: 3.5rem;
+  border: 0.15rem solid #0a9e68;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+}
+.log-in p:hover{
+  background-color: #0a9e68;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
 
  .navbar-mobile {
   display: none;

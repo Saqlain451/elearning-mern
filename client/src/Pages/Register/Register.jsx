@@ -6,12 +6,15 @@ import { MdOutlineLockPerson,MdEmail } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import "./register.css";
 import { useGloblaHook } from "../../Hooks/Context";
+import  { Toaster } from 'react-hot-toast';
 const Register = () => {
   const navigate = useNavigate();
   const {registerData,regChangeHanler,regSubHandler,isRegisterd,titleChange} = useGloblaHook();
   titleChange("Sign Up")
   if(isRegisterd){
-    navigate("/login")
+    setTimeout(()=>{
+      navigate("/login")
+    },3000)
   }
   return (
     <>
@@ -45,7 +48,7 @@ const Register = () => {
               </span>
               <input type="password" placeholder="Password" name="pass" value={registerData.pass} onChange={regChangeHanler} required
                 minLength={8}
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$"/>
+                />
             </div>
             <div className="input-feild">
               <span className="text-green fs-2">
@@ -62,6 +65,7 @@ const Register = () => {
           </form>
         </div>
       </div>
+      <Toaster/>
     </>
   );
 };

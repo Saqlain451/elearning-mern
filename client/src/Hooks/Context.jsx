@@ -90,13 +90,21 @@ const AppProvider = ({ children }) => {
         },
         body: JSON.stringify({ ...inpData }),
       });
+
       const res = await data.json();
       console.log(res);
       if (res.msg) {
         toast.success(res.msg, {
           position: 'bottom-center',
         });
+        if(res.userDetails){
+          localStorage.setItem(
+            "user",
+            JSON.stringify({ ...res.userDetails})
+        );
+        }
         setFunc(true);
+        
       } else {
         toast.error(res.err,{
           position: 'bottom-center',

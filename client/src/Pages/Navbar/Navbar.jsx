@@ -1,13 +1,41 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import "./navbar.css";
 import { GoThreeBars } from 'react-icons/go';
 import { useGloblaHook } from '../../Hooks/Context';
 import {AiOutlineHome} from 'react-icons/ai'
 import {BsBookHalf,BsCodeSlash,BsFillPersonFill,BsFillGridFill} from 'react-icons/bs'
-import {RiLogoutCircleFill} from 'react-icons/ri'
+import { useNavigate } from 'react-router-dom';
 const Navbar = () => {
-  const {navbarToggle, show,isLoggedIn} = useGloblaHook()
+  const navigate = useNavigate();
+  const {navbarToggle, show} = useGloblaHook()
+  const [useName, setUserName] = useState({
+    name : "",
+    isLoggedIn : false,
+  });
+  const storedUser = localStorage.getItem("user")
+
+  const loginClick = ()=>{
+    navigate("/register")
+  }
+  const logoUtClick = ()=>{
+    localStorage.removeItem('user');
+    navigate("/")
+    setUserName({
+      isLoggedIn : false
+    })
+  }
+  useEffect(()=>{
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      const userName = user.name.split(" ")
+      setUserName({
+        name : userName[0],
+        isLoggedIn : true
+      })
+    } 
+  },[navigate])
+  
   return (
     <>
       <header className= {show? "show" : ""}>
@@ -24,7 +52,11 @@ const Navbar = () => {
           </ul>
         </nav>
         <div className="log-in">
-          <button className="btn-login"> <NavLink to={"/login"}>{isLoggedIn? <RiLogoutCircleFill/>:<BsFillPersonFill/>}</NavLink></button>
+          
+          {useName.isLoggedIn? <p className='fs-1-5' onClick={logoUtClick}>{useName.name}</p>:
+          <button className="btn-login" onClick={loginClick}> <BsFillPersonFill/></button>
+          }
+          
           <span className='bar' onClick={navbarToggle}>  <GoThreeBars />  </span>
         </div>
       </header>

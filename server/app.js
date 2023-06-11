@@ -12,8 +12,6 @@ app.use(cors())
 app.use(instructRoutes);
 app.use(userRouter);
 app.use(courseRouter);
-
-
 const port = process.env.PORT
 
 app.listen(port, () => {

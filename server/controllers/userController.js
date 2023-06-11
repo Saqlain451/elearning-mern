@@ -33,14 +33,12 @@ const checkUser = async (req, res) => {
     }
     try {
         const chekMail = await users.findOne({ mail })
-        const token = await chekMail.generateToken();
-        // console.log(token);
-        res.cookie("jwt", token, {
-            expire: new Date(Date.now() + 240000000),
-            httpOnly: true,
-        });
         const isPassMatch = await bcrypt.compare(pass, chekMail.pass);
-        chekMail && isPassMatch ? res.status(201).json({ msg: "Log in Successfull" }) : res.status(501).json({ err: "Invalid Credential" })
+        if (chekMail && isPassMatch) {
+            res.status(201).json({ msg: "Log in Successfull", userDetails : chekMail})
+        } else {
+            res.status(501).json({ err: "Invalid Credential" })
+        }
     } catch (error) {
         res.status(501).json({ err: "User is not registered" })
     }
