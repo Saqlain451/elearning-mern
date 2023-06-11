@@ -2,13 +2,13 @@ import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import "./contact.css"
 import { useGloblaHook } from '../../Hooks/Context';
-
+import "./contact.css"
 function ContactForm() {
   const {titleChange} = useGloblaHook()
   titleChange("Contact")
   const [state, handleSubmit] = useForm("mqkovegg");
   if (state.succeeded) {
-      return <p>Thanks for joining!</p>;
+      return <p className='msg'>Thanks for joining!</p>;
   }
   return (
     <div className='bg-light contact'>
