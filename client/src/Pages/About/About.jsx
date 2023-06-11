@@ -40,9 +40,9 @@ const About = () => {
           Here are a few numbers <br /> that we are proud of
         </h1>
         <div className="d-grid-3">
-          {successData.map((ele) => {
+          {successData.map((ele,id) => {
             return (
-              <div className="mt-2">
+              <div className="mt-2" key={id}>
                 <h1 className="fs-2-5 text-center">{ele.num}</h1>
                 <p className="fs-2 fw-6 text-center mt-1">{ele.title}</p>
                 <p className="fs-1-5 text-center mt-1 text-dark">{ele.des}</p>

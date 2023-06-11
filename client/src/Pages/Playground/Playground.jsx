@@ -1,9 +1,11 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import { Editor } from "@monaco-editor/react";
 import "./playground.css"
 import { useGloblaHook } from "../../Hooks/Context";
 import Title from "../../Components/Title/Title";
+import { useNavigate } from "react-router-dom";
 const Playground = () => {
+  const navigate = useNavigate();
   const {titleChange,isActiveBtn, changeHandler,btnClassToggle,codeData} = useGloblaHook()
   titleChange("Playground")
 
@@ -14,6 +16,12 @@ const Playground = () => {
     heading3 : "Edior",
     des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
   }
+
+  useEffect(()=>{
+    if (!localStorage.getItem("user")) {
+      navigate("/login");
+  }
+  },[])
   
   const codeSyntax = `
     <!Doctype html>
