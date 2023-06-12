@@ -143,7 +143,7 @@ const AppProvider = ({ children }) => {
 
   const loginHanlder = (e) => {
     e.preventDefault();
-    postApiData(`${url}/login`, loginData,setIsLoggedIn);
+    postApiData(`${url}/login`, {...loginData},setIsLoggedIn);
     setLoginData({
       mail: "",
       pass: "",
@@ -193,6 +193,9 @@ const AppProvider = ({ children }) => {
   };
   // * End of playground ------------------------------------------>
 
+  // * start favourite part ------------------------>
+ 
+  
   return (
     <appContext.Provider
       value={{

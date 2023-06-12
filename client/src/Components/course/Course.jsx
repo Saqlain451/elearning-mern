@@ -1,8 +1,8 @@
 import React from 'react'
 import "./course.css"
-import {BsCurrencyRupee,BsLightbulb,BsFillPersonFill,BsStar,BsTranslate} from 'react-icons/bs'
+import {BsCurrencyRupee,BsLightbulb,BsFillPersonFill,BsStar,BsTranslate,BsFillSuitHeartFill,BsSuitHeart} from 'react-icons/bs'
 import { useNavigate } from 'react-router-dom'
-const Course = ({title,price,description,type, author,language,img,intro,path}) => {
+const Course = ({title,price,description,type, author,language,img,intro,path,favBtnClick,course_id}) => {
   const navigate = useNavigate();
   return (
     
@@ -31,6 +31,7 @@ const Course = ({title,price,description,type, author,language,img,intro,path}) 
 
         <div className="card-single-course">
             <img src={img} alt="" />
+            <i className="heart" onClick={()=>{favBtnClick({title,price,description,type,img, author,course_id})}}><BsSuitHeart/></i>
             <div className="single-course-container">
             <p>{title}</p>
             <p><i><BsCurrencyRupee/></i>  <span>Price :</span>  {price} </p>
