@@ -18,4 +18,15 @@ const addFav = async (req, res) => {
     }
 }
 
-export { addFav }
+
+const getAllFav = async(req,res) =>{
+    const mail = req.params.mail;
+    try {
+        const allFavData = await favourite.find({mail});
+        allFavData.length?res.status(201).json({success:allFavData}) : res.status(501).json({err : "No data found"})
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export { addFav,getAllFav}

@@ -1,7 +1,9 @@
 import express from 'express'
-import { addFav } from "../controllers/FavControllers.js";
+import { addFav,getAllFav } from "../controllers/FavControllers.js";
 const favRoutes = new express.Router();
 
 favRoutes.post("/addFav",addFav)
+
+favRoutes.get("/allFav/:mail", getAllFav)
 
 export default favRoutes;
