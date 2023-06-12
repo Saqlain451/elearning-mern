@@ -4,7 +4,7 @@ import "./navbar.css";
 import { GoThreeBars } from 'react-icons/go';
 import { useGloblaHook } from '../../Hooks/Context';
 import {AiOutlineHome} from 'react-icons/ai'
-import {BsBookHalf,BsCodeSlash,BsFillPersonFill,BsFillGridFill} from 'react-icons/bs'
+import {BsBookHalf,BsCodeSlash,BsFillPersonFill,BsFillGridFill,BsFillHeartFill} from 'react-icons/bs'
 import { useNavigate } from 'react-router-dom';
 const Navbar = () => {
   const navigate = useNavigate();
@@ -52,7 +52,7 @@ const Navbar = () => {
           </ul>
         </nav>
         <div className="log-in">
-          
+        <button className="btn-login" onClick={()=>{navigate("/favourite")}}>  <BsFillHeartFill/></button>
           {useName.isLoggedIn? <p className='fs-1-5' onClick={logoUtClick}>{useName.name}</p>:
           <button className="btn-login" onClick={loginClick}> <BsFillPersonFill/></button>
           }

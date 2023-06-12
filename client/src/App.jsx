@@ -16,6 +16,7 @@ import Faq from "./Pages/Faq/Faq";
 import Trainer from "./Pages/Trainer/Trainer";
 import SingleCourse from "./Pages/SingleCourse/SingleCourse";
 import CourseVideos from "./Pages/CourseVideos/CourseVideos";
+import Favourite from "./Pages/Favourite/Favourite";
 const App = () => {
 
   return (
@@ -36,6 +37,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/contact" element={<ContactForm />} />
           <Route path="/faq" element={<Faq />} />
+          <Route path="/favourite" element={<Favourite/>} />
           <Route path="*" element={<Pnf />} />
         </Routes>
         <Footer />

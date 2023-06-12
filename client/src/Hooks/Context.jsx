@@ -45,12 +45,13 @@ const AppProvider = ({ children }) => {
  
   const getInsApiData = async (url, setData) => {
     setIsLoading(true)
+    setisError(false);
     try {
       const data = await fetch(url);
       const res = await data.json();
       // console.log(res);
       res? setIsLoading ( false) : setIsLoading(true)
-      setData(res.success);
+      res.success? setData(res.success) : setisError(true);
     } catch (error) {
       console.log(error);
     }
