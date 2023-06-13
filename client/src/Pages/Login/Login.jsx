@@ -7,7 +7,7 @@ import { useGloblaHook } from "../../Hooks/Context";
 import  { Toaster } from 'react-hot-toast';
 const Login = () => {
   const navigate = useNavigate();
-  const { loginData, loginChangeHandler, loginHanlder, isLoggedIn,titleChange } =
+  const { loginData, loginChangeHandler, loginHanlder, isLoggedIn,titleChange, } =
     useGloblaHook();
     titleChange("Log in")
   if (isLoggedIn) {

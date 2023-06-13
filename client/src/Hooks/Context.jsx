@@ -105,7 +105,9 @@ const AppProvider = ({ children }) => {
         );
         }
         setFunc(true);
-        
+        setTimeout(()=>{
+          setFunc(false)
+        },3500)
       } else {
         toast.error(res.err,{
           position: 'bottom-center',
