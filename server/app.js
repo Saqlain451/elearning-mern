@@ -14,7 +14,7 @@ app.use(instructRoutes);
 app.use(userRouter);
 app.use(courseRouter);
 app.use(favRoutes);
-const port = process.env.PORT
+const port = process.env.PORT || 4000
 
 app.listen(port, () => {
     console.log(`app is running at port ${port}`)
