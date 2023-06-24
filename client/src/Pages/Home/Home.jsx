@@ -11,6 +11,8 @@ import Instructor4 from "../../Components/InstructorCard/Instructor4";
 import { useGloblaHook } from "../../Hooks/Context";
 import CourseCard from "../../Components/card/CourseCard";
 import { NavLink } from "react-router-dom";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 const Home = () => {
   const {titleChange,getInsApiData, allCourses,setAllCourses,url} = useGloblaHook();
@@ -39,6 +41,36 @@ const Home = () => {
     des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
   };
 
+
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 4
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+    }
+  };
+
+  const configCarosel = {
+    draggable : true,
+    showDots : true,
+    responsive : responsive,
+    keyBoardControl : true,
+    itemClass: 'carousel-item-padding-40-px',
+    containerClass: 'carousel-container',
+  }
+
   useEffect(()=>{
     getInsApiData(`${url}/allcourses`,setAllCourses)
   },[])
@@ -59,7 +91,10 @@ const Home = () => {
       </div>
       <div className="p-global">
         <Title {...courseTitle} />
-        <div className="grid-4 grid-sm-1 grid-lg-3 grid-md-2 home-course">
+        {/* courses card part */}
+        <div className="home-course">
+        <Carousel {...configCarosel}>
+
         {allCourses.map((ele,id)=>{
             const{title, img, price, type,author} = ele;
             const newEle = {title, img, price, type,author}
@@ -70,6 +105,7 @@ const Home = () => {
               )
             }  
           })}
+        </Carousel>
         </div>
         <div className="mt-5"></div>
         <NavLink to={"/courses"}>
